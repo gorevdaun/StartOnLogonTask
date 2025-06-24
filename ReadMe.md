@@ -1,4 +1,4 @@
-# ⚙️ Start on logon task installer
+# ⚙️ "Start on logon" task installer
 
 A simple `.bat` script that creates a Windows Task Scheduler task to automatically launch a specified application **with highest privileges** at system logon.
 
