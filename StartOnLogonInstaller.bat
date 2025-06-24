@@ -18,8 +18,8 @@ if not exist "%APP_PATH%" (
     exit /b
 )
 
-:: Replace YOUR TASK NAME with any name you want for the task
-schtasks /create /tn "YOUR TASK NAME" /tr "%APP_PATH%" /sc onlogon /rl highest /f
+:: Replace "AjazzStartOnLogon" with any name you want for the task
+schtasks /create /tn "AjazzStartOnLogon" /tr "%APP_PATH%" /sc onlogon /rl highest /f
 
 echo [SUCCESS] The Ajazz will start at logon without SystemMonitor.exe popup (UAC)
 
