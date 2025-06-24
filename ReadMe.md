@@ -29,3 +29,10 @@ Also you can replace "AjazzStartOnLogon" with any name you want for the task.
 ## 💡 Tip
 
 This script can be reused for any other application that you want to start with admin rights at user logon — just change the APP_PATH.
+
+## Deletion
+
+1. Press Win + R, type taskschd.msc and press Enter.
+2. In the left panel, click Task Scheduler Library.
+3. Find your task (AjazzStartOnLogon by default) in the middle list.
+4. Right-click the task and choose Delete.
