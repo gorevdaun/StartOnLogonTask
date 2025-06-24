@@ -7,7 +7,7 @@ Originally created to launch **Stream Dock Ajazz**, which triggers a **SystemMon
 
 ## 📌 How to Use
 
-1. Open the script using **Notepad** or any text editor.
+1. Open the script using **Notepad++** or any text editor.
 2. Find the line:
 
 ```
