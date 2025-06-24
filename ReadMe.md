@@ -20,6 +20,8 @@ set "APP_PATH=D:\Ajazz\Stream Dock AJAZZ.exe"
 3. Save the file.
 4. Run StartOnLogonInstaller.bat as Administrator (right-click → “Run as administrator”).
 
+Also you can replace "AjazzStartOnLogon" with any name you want for the task.
+
 ✅ If everything is correct, you’ll see a confirmation message.
 
 ❌ If something goes wrong, the script will explain what the problem is.
