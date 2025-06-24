@@ -7,7 +7,7 @@ set "APP_PATH="
 
 :: VALIDATION
 if "%APP_PATH%"=="" (
-    echo [ERROR] Open this file and specify the application path ath APP_PATH=
+    echo [ERROR] Open this file and specify the application path at "APP_PATH="
     pause
     exit /b
 )
