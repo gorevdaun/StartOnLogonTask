@@ -1,38 +1,49 @@
-# ⚙️ "Start on logon" task installer
+# ⚙️ Start on Logon Task Installer
 
-A simple `.bat` script that creates a Windows Task Scheduler task to automatically launch a specified application **with highest privileges** at system logon.
+A simple `.bat` script that creates a Windows Task Scheduler task to automatically launch a specified application **with highest privileges** at system logon — no UAC prompt, no manual clicks.
 
-Originally created to launch **Stream Dock Ajazz**, which triggers a **SystemMonitor.exe UAC popup** on every startup — this script helps bypass that prompt by scheduling the app to run with elevated rights silently.
+Originally built for **Stream Dock Ajazz**, which triggers a **SystemMonitor.exe UAC popup** every time Windows starts. This script eliminates that annoyance by scheduling the app to run silently with admin rights.
 
+---
 
-## 📌 How to Use
+## 📥 How to Use
 
-1. Open the script using **Notepad++** or any text editor.
-2. Find the line:
+1. **Run** `StartOnLogonInstaller.bat` as Administrator  
+   _(Right-click → “Run as administrator”)_
+2. **Enter** the full path to your `.exe` file  
+   _(e.g., `D:\Ajazz\Stream Dock AJAZZ.exe`)_
+3. **Enter** the task name  
+   _(e.g., `AjazzStartOnLogon`)_
+4. ✅ Done!
 
-```
-set "APP_PATH="
-```
-and set the full path to your "Stream Dock AJAZZ.exe" or another program. For example:
-```
-set "APP_PATH=D:\Ajazz\Stream Dock AJAZZ.exe"
-```
-3. Save the file.
-4. Run StartOnLogonInstaller.bat as Administrator (right-click → “Run as administrator”).
+If everything is correct, you’ll see a confirmation message.  
+If something goes wrong, the script will explain the problem.
 
-Also you can replace "AjazzStartOnLogon" with any name you want for the task.
-
-✅ If everything is correct, you’ll see a confirmation message.
-
-❌ If something goes wrong, the script will explain what the problem is.
+---
 
 ## 💡 Tip
 
-This script can be reused for any other application that you want to start with admin rights at user logon — just change the APP_PATH.
+You can use this script for **any other app** that needs to start with elevated rights at logon — not just Stream Dock Ajazz. Just specify a different `.exe` path.
 
-## Deletion
+---
 
-1. Press Win + R, type taskschd.msc and press Enter.
-2. In the left panel, click Task Scheduler Library.
-3. Find your task (AjazzStartOnLogon by default) in the middle list.
-4. Right-click the task and choose Delete.
+## 🗑 How to Delete the Task
+
+1. Press `Win + R`, type `taskschd.msc`, and press Enter.
+2. In the left panel, click **Task Scheduler Library**.
+3. Find your task (default name: `AjazzStartOnLogon`) in the middle list.
+4. Right-click the task → **Delete**.
+
+---
+
+## 🧪 Tested On
+
+- ✅ Windows 10
+- ✅ Windows 11
+- ⚠️ Requires Administrator rights to install the task
+
+---
+
+## 📄 License
+
+MIT — free to use, modify, and distribute.
