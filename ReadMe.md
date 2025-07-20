@@ -31,7 +31,7 @@ You can use this script for **any other app** that needs to start with elevated 
 
 1. Press `Win + R`, type `taskschd.msc`, and press Enter.
 2. In the left panel, click **Task Scheduler Library**.
-3. Find your task (default name: `AjazzStartOnLogon`) in the middle list.
+3. Find your task in the middle list.
 4. Right-click the task → **Delete**.
 
 ---
