@@ -1,13 +1,23 @@
 @echo off
+title Start On Logon Task
 
-:: Specify the full path to the Stream Dock AJAZZ.exe
-:: Example: set "APP_PATH=D:\Ajazz\Stream Dock AJAZZ.exe"
-set "APP_PATH="
+:: Prompt user for the path
+echo Please enter the full path to your .exe file
+set /p APP_PATH=Path: 
 
+:: Remove surrounding quotes if any
+set APP_PATH=%APP_PATH:"=%
+
+:: Prompt user for the task name
+echo Please enter the Task Name to be created in Task Scheduler
+set /p TASK_NAME=Task Name: 
+
+:: Remove surrounding quotes if any
+set TASK_NAME=%TASK_NAME:"=%
 
 :: VALIDATION
 if "%APP_PATH%"=="" (
-    echo [ERROR] Open this file and specify the application path at "APP_PATH="
+    echo [ERROR] No path entered.
     pause
     exit /b
 )
@@ -18,11 +28,16 @@ if not exist "%APP_PATH%" (
     exit /b
 )
 
-:: Replace "AjazzStartOnLogon" with any name you want for the task
-schtasks /create /tn "AjazzStartOnLogon" /tr "%APP_PATH%" /sc onlogon /rl highest /f
+if "%TASK_NAME%"=="" (
+    echo [ERROR] No task name entered.
+    pause
+    exit /b
+)
 
-echo [SUCCESS] The Ajazz will start at logon without SystemMonitor.exe popup (UAC)
+:: Create the scheduled task
+schtasks /create /tn "%TASK_NAME%" /tr "\"%APP_PATH%\"" /sc onlogon /rl highest /f
 
-:skip
+echo [SUCCESS] Your program will start as administrator at logon under task "%TASK_NAME%"
+
 pause
 exit
